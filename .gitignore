@@ -10,6 +10,7 @@ data
 # Exclude npm packages
 node_modules
 bower_components
+phonegap
 # Exclude REDIS dumps
 dump.rdb
 Vagrantfile

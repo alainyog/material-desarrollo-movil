@@ -40,10 +40,11 @@ require.config({
 
 require(
   ["jquery",
+   "underscore",
    "jasmine-html",
    "/test/spec/base.js",
   ],
-  function($, jasmine) {
+  function($, _, jasmine) {
     "use strict";
     var jasmineEnv = jasmine.getEnv(),
         htmlReporter = new jasmine.HtmlReporter();
