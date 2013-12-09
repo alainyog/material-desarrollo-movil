@@ -1,0 +1,31 @@
+<div style="text-align: left !important">
+  <div class="box">
+
+    <img class="avatar" width="64" height="64" src="">
+    <div class="personal-info">
+      <div>
+        <h2 class="name"></h2>
+      </div>
+      <div>
+        Telefono: <span class="phone"></span>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 10px">
+    <div class="company">
+      <h3>Empresa</h3>
+      <p>
+        ACME
+      </p>
+    </div>
+
+    <div class="more-info">
+      <h3>Más información</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, neque possimus ipsum quibusdam maiores nihil perspiciatis in voluptate eveniet consequatur reprehenderit mollitia quasi ratione inventore commodi unde eum expedita molestias.
+      </p>
+    </div>
+  </div>
+
+</div>
