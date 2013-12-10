@@ -101,7 +101,7 @@ module.exports = function(grunt) {
         cordova: ".cordova",
         path: "phonegap",
         plugins: [],
-        platforms: ["android", "ios"],
+        platforms: ["android"],
         verbose: false
       }
     },
@@ -120,6 +120,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask("default", ["jshint", "bower", "handlebars", "requirejs", "concat:plain", "clean", "copy"]);
   grunt.registerTask("build", ["jshint", "bower", "handlebars", "requirejs", "concat:ugly", "uglify", "clean", "copy"]);
+  grunt.registerTask("run", ["default", "phonegap:run:android"]);
 
   grunt.registerTask("server", function(mode) {
     var connect = require("connect"),

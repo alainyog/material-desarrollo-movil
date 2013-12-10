@@ -7,6 +7,7 @@ require.config({
     underscore: "../../bower_components/underscore/underscore",
     hammer: "../../bower_components/hammerjs/dist/hammer",
     "hammer-jquery": "../../bower_components/hammerjs/dist/jquery.hammer",
+    hammerjs: "../../bower_components/hammerjs/dist/jquery.hammer"
   },
   shim: {
     jquery: {
