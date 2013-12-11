@@ -149,6 +149,48 @@ h1 {
   font-size: smaller;
 }
 
+/* Ej6 */
+
+.details .avatar {
+  margin: 1em 1em 0 0;
+  border-radius: 5px;
+  float: left;
+  clear: both;
+}
+
+.details .name {
+  font-size: 30px;
+
+}
+
+.details .phone {
+  font-size: 15px;
+  font-weight: lighter;
+  color: #888;
+  margin-top: 2.5em;
+}
+
+.details .company, .details .more-info, .details .box {
+  margin: 0 3em 0 2em;
+}
+
+.details .box {
+  border-bottom: 1px solid #fb8521;
+}
+
+.details .personal-info {
+  line-height: 0;
+  margin-top: 2em;
+
+}
+
+.details .company h3, .details .more-info h3 {
+  color: black;
+}
+.details .company, .details .more-info {
+  color: #888;
+}
+
 /* Fonts */
 
 @font-face {

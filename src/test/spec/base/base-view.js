@@ -38,7 +38,7 @@ define(["jasmine-html", "base"], function(jasmine, Base) {
       it("debería devolver la colección serializada si tiene colección", function() {
         var serialCol = col.toJSON();
         v.collection = col;
-        expect(v.serializeModel()).toEqual(serialCol);
+        expect(v.serializeData()).toEqual(serialCol);
       });
 
     });

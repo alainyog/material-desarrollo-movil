@@ -1,0 +1,102 @@
+define(["jquery", "backbone", "base", "containers", "templates", "custom/components.js"], function($, Backbone, Base, Containers, JST, Components) {
+  "use strict";
+
+  var Screen1 = Base.ItemView.extend({
+    template: JST["ejercicios/ej1/screen1"],
+    title: "Pantalla 1",
+    className: "vertical box",
+    triggers: {
+      "touchstart #to-scrn-2": "to:screen2",
+      "touchstart #to-scrn-3": "to:screen3",
+    },
+  });
+
+  var Screen2 = Base.ItemView.extend({
+    template: JST["ejercicios/ej1/screen2"],
+    title: "Pantalla 2",
+    className: "vertical box",
+  });
+
+  var Screen3 = Base.ItemView.extend({
+    template: JST["ejercicios/ej1/screen3"],
+    title: "Pantalla 3",
+    className: "vertical box",
+  });
+
+  /* Parallax
+
+  var ImageView = Base.ItemView.extend({
+    initialize: function(options) {
+      this.$el.css("width", "100%");
+      this.el.src = options.src;
+    },
+    tagName: "img",
+    template: function() { return ""; }
+  });
+
+  */
+
+  return Base.Activity.extend({
+    start: function() {
+      var screen1 = new Screen1(),
+          screen2 = new Screen2(),
+          screen3 = new Screen3();
+
+      var sc = new Components.AnimatedStackContainer();
+
+      var listData = new Backbone.Collection();
+      listData.length = 10000;
+      listData.at = function(i) {
+        return {
+          tiny: i,
+          text:  Math.random().toString(29).slice(0, 15),
+          subtext: (new Date()).toString()
+        };
+      };
+
+      var list = new Containers.ListContainer({
+        dataProvider: listData
+      });
+
+      /* Parallax
+
+      scroll.addView(
+        new ImageView({src: "/assets/img/img1.png"}),
+         100,
+         0.5
+      );
+      scroll.addView(
+        new ImageView({src: "/assets/img/img2.png"}),
+         1500,
+         2
+      );
+
+      */
+
+      list.title = "ListContainer Test";
+
+      sc.push(list);
+
+      this.vent.forwardAll([list.vent, screen1, screen2, screen3]);
+
+      this.vent.on("list:item:selected", function() {
+        sc.push(screen2);
+      });
+
+      this.vent.on("to:screen2", function() {
+        sc.push(screen2);
+      });
+
+      this.vent.on("to:screen3", function() {
+        sc.push(screen3);
+      });
+
+      sc.on("show", function() {
+        list.start();
+      });
+
+      this.mainView = sc;
+    },
+  });
+
+});

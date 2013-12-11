@@ -1,10 +1,12 @@
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="/assets/css/topcoat.css" title="" type="" />
+    <link rel="stylesheet" href="/assets/css/style.css" title="" type="" />
     <title>Index</title>
   </head>
   <body>
-    <h1> Hola! </h1>
 
     <script type="text/javascript">
       document.addEventListener("deviceready", function() {
@@ -12,10 +14,14 @@
       }, false);
     </script>
 
-    <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript" src="/phonegap.js"></script>
     <script data-main="http://192.168.1.39:3000/js/config" src="http://192.168.1.39:3000/bower_components/requirejs/require.js"></script>
+
     <script>
-      require(["app"], function() {});
+      require(["/js/config.js"], function() {
+        require(["/pruebas/stackvc.js"], function() {});
+      });
     </script>
+
   </body>
 </html>
